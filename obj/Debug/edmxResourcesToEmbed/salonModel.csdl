@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fmsalontestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="reserve_no" />
+    </Key>
+    <Property Name="reserve_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reserveDate" Type="DateTime" Precision="0" />
+    <Property Name="reserveTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="totalPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="employee_no" Type="Int32" />
+    <Property Name="userID" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Booking_Employee" FromRole="Booking" ToRole="Employee" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Booking_User" FromRole="Booking" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="category_no" />
+    </Key>
+    <Property Name="categoryid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category_no" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="categotyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_Service_Category" FromRole="Category" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="employee_no" />
+    </Key>
+    <Property Name="employee_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employeeFname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeeLname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeeAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeePhone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Booking" Relationship="Self.FK_Booking_Employee" FromRole="Employee" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="serviceid" />
+    </Key>
+    <Property Name="serviceid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serviceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="servicePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="category_no" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Service_Category" FromRole="Service" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userFname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userLname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userTel" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Booking" Relationship="Self.FK_Booking_User" FromRole="User" ToRole="Booking" />
+  </EntityType>
+  <Association Name="FK_Booking_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="employee_no" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="employee_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Booking_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Service" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="category_no" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="category_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="fmsalontestEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Booking" EntityType="Self.Booking" />
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="Service" EntityType="Self.Service" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK_Booking_Employee" Association="Self.FK_Booking_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Booking_User" Association="Self.FK_Booking_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_Category" Association="Self.FK_Service_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Service" EntitySet="Service" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="fmsalontestModel.sysdiagrams" />
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

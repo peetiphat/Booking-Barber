@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FMsalonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FMsalon.dbo.Booking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="Reserve_no" />
+    </Key>
+    <Property Name="Reserve_no" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Reserve_date" Type="date" />
+    <Property Name="Reserve_time" Type="varchar" MaxLength="50" />
+    <Property Name="Reserve_status" Type="varchar" MaxLength="50" />
+    <Property Name="Service_no" Type="varchar" MaxLength="10" />
+    <Property Name="Employee_no" Type="int" />
+    <Property Name="userID" Type="int" />
+    <Property Name="ReserveID" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_no" />
+    </Key>
+    <Property Name="Categoryid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_no" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Categoty_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employee_no" />
+    </Key>
+    <Property Name="Employee_no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_code" Type="varchar" MaxLength="5" />
+    <Property Name="Employee_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PayDetail">
+    <Key>
+      <PropertyRef Name="PayID" />
+    </Key>
+    <Property Name="PayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="totalPrice" Type="money" />
+    <Property Name="Reserve_no" Type="varchar" MaxLength="5" />
+    <Property Name="userID" Type="int" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Service_no" />
+    </Key>
+    <Property Name="Serviceid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Service_no" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Service_name" Type="varchar" MaxLength="50" />
+    <Property Name="Service_price" Type="money" />
+    <Property Name="Category_no" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userFname" Type="varchar" MaxLength="50" />
+    <Property Name="userLname" Type="varchar" MaxLength="50" />
+    <Property Name="userAddress" Type="varchar" MaxLength="50" />
+    <Property Name="userTel" Type="varchar" MaxLength="12" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Booking_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_no" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Employee_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Booking_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Service_no" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Service_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Booking_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayDetail_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="PayDetail" Type="Self.PayDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="PayDetail">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Service" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Category_no" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="Category_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FMsalonModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PayDetail" EntityType="Self.PayDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Booking" EntityType="Self.Booking" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Booking].[Reserve_no] AS [Reserve_no], 
+    [Booking].[Reserve_date] AS [Reserve_date], 
+    [Booking].[Reserve_time] AS [Reserve_time], 
+    [Booking].[Reserve_status] AS [Reserve_status], 
+    [Booking].[Service_no] AS [Service_no], 
+    [Booking].[Employee_no] AS [Employee_no], 
+    [Booking].[userID] AS [userID], 
+    [Booking].[ReserveID] AS [ReserveID]
+    FROM [dbo].[Booking] AS [Booking]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Booking_Employee" Association="Self.FK_Booking_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Booking_Service" Association="Self.FK_Booking_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Booking_User" Association="Self.FK_Booking_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayDetail_User" Association="Self.FK_PayDetail_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="PayDetail" EntitySet="PayDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_Category" Association="Self.FK_Service_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Service" EntitySet="Service" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

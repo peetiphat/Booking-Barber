@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FMsalonModelStoreContainer" CdmEntityContainer="FMsalonEntities">
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="FMsalonModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Categoty_name" ColumnName="Categoty_name" />
+          <ScalarProperty Name="Category_no" ColumnName="Category_no" />
+          <ScalarProperty Name="Categoryid" ColumnName="Categoryid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="FMsalonModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Employee_name" ColumnName="Employee_name" />
+          <ScalarProperty Name="Employee_code" ColumnName="Employee_code" />
+          <ScalarProperty Name="Employee_no" ColumnName="Employee_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayDetail">
+      <EntityTypeMapping TypeName="FMsalonModel.PayDetail">
+        <MappingFragment StoreEntitySet="PayDetail">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="Reserve_no" ColumnName="Reserve_no" />
+          <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+          <ScalarProperty Name="PayID" ColumnName="PayID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="FMsalonModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="Category_no" ColumnName="Category_no" />
+          <ScalarProperty Name="Service_price" ColumnName="Service_price" />
+          <ScalarProperty Name="Service_name" ColumnName="Service_name" />
+          <ScalarProperty Name="Service_no" ColumnName="Service_no" />
+          <ScalarProperty Name="Serviceid" ColumnName="Serviceid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="FMsalonModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="FMsalonModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="userTel" ColumnName="userTel" />
+          <ScalarProperty Name="userAddress" ColumnName="userAddress" />
+          <ScalarProperty Name="userLname" ColumnName="userLname" />
+          <ScalarProperty Name="userFname" ColumnName="userFname" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Booking">
+      <EntityTypeMapping TypeName="FMsalonModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="ReserveID" ColumnName="ReserveID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="Employee_no" ColumnName="Employee_no" />
+          <ScalarProperty Name="Service_no" ColumnName="Service_no" />
+          <ScalarProperty Name="Reserve_status" ColumnName="Reserve_status" />
+          <ScalarProperty Name="Reserve_time" ColumnName="Reserve_time" />
+          <ScalarProperty Name="Reserve_date" ColumnName="Reserve_date" />
+          <ScalarProperty Name="Reserve_no" ColumnName="Reserve_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

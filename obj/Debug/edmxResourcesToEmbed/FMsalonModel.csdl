@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FMsalonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FMsalonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Category" EntityType="FMsalonModel.Category" />
+    <EntitySet Name="Employee" EntityType="FMsalonModel.Employee" />
+    <EntitySet Name="PayDetail" EntityType="FMsalonModel.PayDetail" />
+    <EntitySet Name="Service" EntityType="FMsalonModel.Service" />
+    <EntitySet Name="sysdiagrams" EntityType="FMsalonModel.sysdiagrams" />
+    <EntitySet Name="User" EntityType="FMsalonModel.User" />
+    <EntitySet Name="Booking" EntityType="FMsalonModel.Booking" />
+    <AssociationSet Name="FK_Service_Category" Association="FMsalonModel.FK_Service_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Service" EntitySet="Service" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Booking_Employee" Association="FMsalonModel.FK_Booking_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayDetail_User" Association="FMsalonModel.FK_PayDetail_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="PayDetail" EntitySet="PayDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Booking_Service" Association="FMsalonModel.FK_Booking_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Booking_User" Association="FMsalonModel.FK_Booking_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Category_no" />
+    </Key>
+    <Property Name="Categoryid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category_no" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Categoty_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Service" Relationship="FMsalonModel.FK_Service_Category" FromRole="Category" ToRole="Service" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employee_no" />
+    </Key>
+    <Property Name="Employee_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Employee_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Employee_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Booking" Relationship="FMsalonModel.FK_Booking_Employee" FromRole="Employee" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="PayDetail">
+    <Key>
+      <PropertyRef Name="PayID" />
+    </Key>
+    <Property Name="PayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="totalPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Reserve_no" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="userID" Type="Int32" />
+    <NavigationProperty Name="User" Relationship="FMsalonModel.FK_PayDetail_User" FromRole="PayDetail" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Service_no" />
+    </Key>
+    <Property Name="Serviceid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Service_no" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Service_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Service_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Category_no" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="FMsalonModel.FK_Service_Category" FromRole="Service" ToRole="Category" />
+    <NavigationProperty Name="Booking" Relationship="FMsalonModel.FK_Booking_Service" FromRole="Service" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userFname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userLname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="userTel" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PayDetail" Relationship="FMsalonModel.FK_PayDetail_User" FromRole="User" ToRole="PayDetail" />
+    <NavigationProperty Name="Booking" Relationship="FMsalonModel.FK_Booking_User" FromRole="User" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="Reserve_no" />
+    </Key>
+    <Property Name="Reserve_no" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Reserve_date" Type="DateTime" Precision="0" />
+    <Property Name="Reserve_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reserve_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Service_no" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Employee_no" Type="Int32" />
+    <Property Name="userID" Type="Int32" />
+    <NavigationProperty Name="Employee" Relationship="FMsalonModel.FK_Booking_Employee" FromRole="Booking" ToRole="Employee" />
+    <NavigationProperty Name="Service" Relationship="FMsalonModel.FK_Booking_Service" FromRole="Booking" ToRole="Service" />
+    <NavigationProperty Name="User" Relationship="FMsalonModel.FK_Booking_User" FromRole="Booking" ToRole="User" />
+    <Property Name="ReserveID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Service_Category">
+    <End Type="FMsalonModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="FMsalonModel.Service" Role="Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Category_no" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="Category_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Booking_Employee">
+    <End Type="FMsalonModel.Employee" Role="Employee" Multiplicity="0..1" />
+    <End Type="FMsalonModel.Booking" Role="Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_no" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Employee_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayDetail_User">
+    <End Type="FMsalonModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FMsalonModel.PayDetail" Role="PayDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="PayDetail">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Booking_Service">
+    <End Type="FMsalonModel.Service" Role="Service" Multiplicity="0..1" />
+    <End Type="FMsalonModel.Booking" Role="Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Service_no" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Service_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Booking_User">
+    <End Type="FMsalonModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="FMsalonModel.Booking" Role="Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,74 @@
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\bin\Debug\FMsalon.exe.config
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\bin\Debug\FMsalon.exe
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\bin\Debug\FMsalon.pdb
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\bin\Debug\Guna.UI2.dll
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.csproj.AssemblyReference.cache
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.frmLogin.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.frmRegister.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.frmMain.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.frmServices.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.frmBookimg.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.frmConfirm.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.Properties.Resources.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.csproj.GenerateResource.cache
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.csproj.CoreCompileInputs.cache
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.csproj.CopyComplete
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.exe
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.pdb
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.frmAdmin.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\obj\Debug\FMsalon.frmMainadmin.resources
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\bin\Debug\EntityFramework.dll
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\bin\Debug\EntityFramework.xml
+C:\Users\asus\Desktop\FMsalonnn\FMsalon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\asus\Desktop\FMSalon\FMsalon\bin\Debug\FMsalon.exe.config
+C:\Users\asus\Desktop\FMSalon\FMsalon\bin\Debug\FMsalon.exe
+C:\Users\asus\Desktop\FMSalon\FMsalon\bin\Debug\FMsalon.pdb
+C:\Users\asus\Desktop\FMSalon\FMsalon\bin\Debug\EntityFramework.dll
+C:\Users\asus\Desktop\FMSalon\FMsalon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\asus\Desktop\FMSalon\FMsalon\bin\Debug\Guna.UI2.dll
+C:\Users\asus\Desktop\FMSalon\FMsalon\bin\Debug\EntityFramework.xml
+C:\Users\asus\Desktop\FMSalon\FMsalon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.csproj.AssemblyReference.cache
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmMainadmin.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmLogin.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmRegister.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmMain.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmConfirm.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.Properties.Resources.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.csproj.GenerateResource.cache
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.csproj.CoreCompileInputs.cache
+C:\Users\asus\Desktop\FMSalon\FMSalon\obj\Debug\FMsalon.csproj.CopyComplete
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.exe
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.pdb
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmBooking.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmAdminservice.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmAdminbooking.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmAdminemployee.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmAdminhome.resources
+C:\Users\asus\Desktop\FMSalon\FMsalon\obj\Debug\FMsalon.frmCheck.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\bin\Debug\FMsalon.exe.config
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\bin\Debug\FMsalon.exe
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\bin\Debug\FMsalon.pdb
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\bin\Debug\EntityFramework.dll
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\bin\Debug\EntityFramework.SqlServer.dll
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\bin\Debug\Guna.UI2.dll
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\bin\Debug\EntityFramework.xml
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\bin\Debug\EntityFramework.SqlServer.xml
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.csproj.AssemblyReference.cache
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmAdminbooking.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmAdminemployee.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmAdminhome.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmAdminservice.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmMainadmin.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmLogin.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmRegister.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmMain.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmCheck.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.frmBooking.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.Properties.Resources.resources
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.csproj.GenerateResource.cache
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.csproj.CoreCompileInputs.cache
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.csproj.CopyComplete
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.exe
+D:\IT\65\Business Programming\Project\FMSalon\FMsalon\obj\Debug\FMsalon.pdb
